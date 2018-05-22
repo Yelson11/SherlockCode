@@ -10,26 +10,19 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "JavaFileReader.cpp"
+#include "FileReader.c"
 
-int main() {
-    FILE * archivo;
-    char caracter[100];
+int main(char *args) {
+    printf("%s",readFile2(""));
+    // llamar a la funcion en FileManager de loadFiles
 
-    archivo = fopen("D:/Users/Yelson/Desktop/Nodo.java","r");
 
-    if (archivo == NULL){
-    	printf("\nError de apertura del archivo.java \n\n");
-    }
-    else {
-    	printf("\nEl contenido del archivo de prueba es \n\n");
-		while (feof(archivo)== 0) {
-			fgets(caracter,100,archivo);
-     		printf("%s",caracter);
-     	}
-		//system("PAUSE");
-    }
-	fclose(archivo);
-	//JavaFileReader * r = new JavaFileReader();
+//#pragma in parallel
+  //  inspectRepeated(content); // el tiene forma de hacer copias de chorros de bytes
+    //inspectVariable(content);
+
+//Docker
+//Sublime Text
+
 	return 0;
 }
