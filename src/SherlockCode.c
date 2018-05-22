@@ -15,7 +15,7 @@ int main() {
     FILE * archivo;
     char caracter[100];
 
-    archivo = fopen("D:/Users/Yelson/Desktop/Probabilistic.txt","r");
+    archivo = fopen("D:/Users/Yelson/Desktop/Nodo.java","r");
 
     if (archivo == NULL)
         {
