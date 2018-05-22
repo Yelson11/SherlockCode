@@ -8,14 +8,9 @@
 #include "JavaFileReader.h"
 
 JavaFileReader::JavaFileReader() {
-	// TODO Auto-generated constructor stub
-
+	num = 0;
 }
 
 JavaFileReader::~JavaFileReader() {
 	// TODO Auto-generated destructor stub
-}
-
-void JavaFileReader::printHola(){
-	printf("Hola");
 }

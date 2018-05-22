@@ -10,6 +10,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include "JavaFileReader.cpp"
 
 int main() {
     FILE * archivo;
@@ -17,19 +18,18 @@ int main() {
 
     archivo = fopen("D:/Users/Yelson/Desktop/Nodo.java","r");
 
-    if (archivo == NULL)
-        {
-            printf("\nError de apertura del archivo. \n\n");
-        }
+    if (archivo == NULL){
+    	printf("\nError de apertura del archivo.java \n\n");
+    }
     else {
     	printf("\nEl contenido del archivo de prueba es \n\n");
 		while (feof(archivo)== 0) {
 			fgets(caracter,100,archivo);
      		printf("%s",caracter);
      	}
-		system("PAUSE");
+		//system("PAUSE");
     }
 	fclose(archivo);
-
+	//JavaFileReader * r = new JavaFileReader();
 	return 0;
 }

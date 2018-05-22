@@ -11,11 +11,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-class JavaFileReader {
+struct JavaFileReader {
+	int num;
 public:
 	JavaFileReader();
 	virtual ~JavaFileReader();
-	void printHola();
 };
 
 #endif /* JAVAFILEREADER_H_ */
