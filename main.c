@@ -10,12 +10,12 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-//#include "FileReader.c"
+#include "regex.c"
+#include "FileReader.c"
 
 int main(/*char *args*/) {
-	printf("Hola mundo");
-    //printf("%s",readFile2(""));
-
+    printf("El contenido del archivo es: \n");
+    printf("%s",readFile2("D:/Users/Yelson/Desktop/Nodo.java"));
     // llamar a la funcion en FileManager de loadFiles
 
 
@@ -24,7 +24,5 @@ int main(/*char *args*/) {
     //inspectVariable(content);
 
 //Docker
-//Sublime Text
-
 	return 0;
 }
