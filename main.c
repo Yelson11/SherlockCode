@@ -10,12 +10,14 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "regex.c"
+//#include "regex.c"
 #include "FileReader.c"
 
 int main(/*char *args*/) {
     printf("El contenido del archivo es: \n");
     printf("%s",readFile2("D:/Users/Yelson/Desktop/Nodo.java"));
+
+
     // llamar a la funcion en FileManager de loadFiles
 
 
