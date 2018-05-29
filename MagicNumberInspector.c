@@ -1,0 +1,1 @@
+//El analizador de los magic numbers
