@@ -8,13 +8,37 @@ struct GeneticAlgorithm
 	int iterationQuantity;
 };
 
+//----------Declare functions----------
+void calculate();
+int fitnessFunction();
+void createPoblation();
+void organize();
+void combine();
+void deleteUseless();
+
+
+//----------Body's Functions----------
 void calculate(){
-	
+
 };
 
+int fitnessFunction(){
+
+};
+
+void createPoblation(){
+
+};
+
+void organize(){
+
+};
+
+void combine(){
+
+};
+
+void deleteUseless(){
+	
+};
 //funciones del algoritmos 
-// funcion de Fitness
-// crear poblacion
-// organizar  
-// combinar 
-// borrar inservibles
