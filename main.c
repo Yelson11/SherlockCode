@@ -18,11 +18,8 @@
 int main(/*char *args*/) {
     //printf("El contenido del archivo es: \n");
     //printf("%s",readFile2("D:/Users/Yelson/Desktop/Nodo.java"));
-    struct GeneticAlgorithm g;
-    g.iterationQuantity = 20;
-    printf("%d", g.iterationQuantity);
-
-
+	struct Individual in = createIndividual(15);
+	printf("%d", in.genome);
 
     // llamar a la funcion en FileManager de loadFiles
 
