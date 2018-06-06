@@ -15,13 +15,17 @@
 #include "FileManager.c"
 
 int main(/*char *args*/) {
+//Menu:
+
+/*
 	printf("%s", "Digite el nombre de los archivos: ");
 	char names[1000];
 	scanf("%[^\n]s",names);
 	printf("%s",names);
 	//char s[] = "AcomodarPersonas.txt Backtracking.txt Probabilistic.txt jugadores.txt";
 	char * content = loadFiles(names);
-	printNames(content);	
+	printNames(content);
+*/
 
 
 //#pragma in parallel

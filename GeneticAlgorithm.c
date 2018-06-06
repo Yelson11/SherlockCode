@@ -11,7 +11,7 @@ struct GeneticAlgorithm
 
 //----------Declare functions----------
 void calculate(struct GeneticAlgorithm pAlgorithm, int pNumVar, int pNumRep, int pNumExcep, int pNumMagic);
-int fitnessFunction(struct Individual pIndiv);
+void fitnessFunction(struct Individual pIndiv);
 void determinateScores(struct Individual p[]);
 void organize();
 void combine();
@@ -36,7 +36,7 @@ void calculate(struct GeneticAlgorithm pAlgorithm, int pNumVar, int pNumRep, int
 	}
 };
 
-int fitnessFunction(struct Individual pIndiv){
+void fitnessFunction(struct Individual pIndiv){
 	float result;
 	result = EVALUATION_NUMBER/pIndiv.genome;
 	pIndiv.score = result;
@@ -45,7 +45,9 @@ int fitnessFunction(struct Individual pIndiv){
 void determinateScores(struct Individual pList[]){
 	int size = arraySize(pList);
 	int indexPopulation;
-	//for(indexPopulation = 0; indexPopulation < pList.)
+	for(indexPopulation = 0; indexPopulation < size; ++indexPopulation){
+		fitnessFunction(pList[indexPopulation]);
+	}
 };
 
 void organize(){
