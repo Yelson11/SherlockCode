@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-char * readFile2(char *pFileName) {
+char * readArchive(char *pFileName) {
     FILE *fileptr;
     char *buffer;
     long filelen;
