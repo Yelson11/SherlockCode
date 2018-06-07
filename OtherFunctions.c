@@ -5,7 +5,7 @@
 //Es un string para facilitar a la hora de mutar
 char * decimalToBinary(int pNumber){
 	int tempDecimal;
-    char * binary = (char *)(malloc(65));
+    char * binary = (char *)(malloc(16));
     int index = 0;    
 
     tempDecimal = pNumber;  
@@ -31,7 +31,6 @@ int binaryToDecimal(char * pNumber){
     }
     return decimal;
 };
-
    
 
 int arraySize(struct Individual pArray[]){

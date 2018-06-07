@@ -2,44 +2,38 @@
 #include <string.h>
 #include "Individual.c"
 #include "OtherFunctions.c"
-#define EVALUATION_NUMBER 3000
 
 struct GeneticAlgorithm
 {
 	int iterationQuantity;
+	int populationQuantity;
 };
 
 //----------Declare functions----------
-void calculate(struct GeneticAlgorithm pAlgorithm, int pNumVar, int pNumRep, int pNumExcep, int pNumMagic);
+void calculate(struct GeneticAlgorithm pAlgorithm);
 void fitnessFunction(struct Individual pIndiv);
 void determinateScores(struct Individual p[]);
+void createInitialPopulation(struct Individual population[]);
 void organize();
 void combine();
 void deleteUseless();
 
-
 //----------Body's Functions----------
-void calculate(struct GeneticAlgorithm pAlgorithm, int pNumVar, int pNumRep, int pNumExcep, int pNumMagic){
+void calculate(struct GeneticAlgorithm pAlgorithm){
 	//Los padres
-	struct Individual population[4];
-	population[0] = createIndividual(pNumVar,1);
-	population[1] = createIndividual(pNumRep,2);
-	population[2] = createIndividual(pNumExcep,3);
-	population[3] = createIndividual(pNumMagic,4);
-
+	pAlgorithm.populationQuantity = 28;
+	struct Individual population[pAlgorithm.populationQuantity];
+	createInitialPopulation(population);
 	//Comienza el proceso
 	int indexParents;
 	for (indexParents = 0; indexParents < pAlgorithm.iterationQuantity; ++indexParents){
 		determinateScores(population);
 		organize();
-
 	}
 };
 
 void fitnessFunction(struct Individual pIndiv){
-	float result;
-	result = EVALUATION_NUMBER/pIndiv.genome;
-	pIndiv.score = result;
+	
 };
 
 void determinateScores(struct Individual pList[]){
@@ -48,6 +42,10 @@ void determinateScores(struct Individual pList[]){
 	for(indexPopulation = 0; indexPopulation < size; ++indexPopulation){
 		fitnessFunction(pList[indexPopulation]);
 	}
+};
+
+void createInitialPopulation(struct Individual population[]){
+
 };
 
 void organize(){
