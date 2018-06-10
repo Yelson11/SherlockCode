@@ -16,6 +16,7 @@
 
 int main(/*char *args*/) {
 //Menu:
+/*
 	printf("%s", "Digite el nombre de los archivos: ");
 	char names[1000];
 	scanf("%[^\n]s",names);
@@ -23,7 +24,9 @@ int main(/*char *args*/) {
 	//char s[] = "AcomodarPersonas.txt Backtracking.txt Probabilistic.txt jugadores.txt";
 	char * content = loadFiles(names);
 	printNames(content);
-
+*/
+	struct GeneticAlgorithm s;
+	calculate(s, 10,201,12,124);
 
 
 //#pragma in parallel

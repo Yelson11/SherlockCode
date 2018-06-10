@@ -10,7 +10,7 @@ struct GeneticAlgorithm
 };
 
 //----------Declare functions----------
-void calculate(struct GeneticAlgorithm pAlgorithm);
+void calculate(struct GeneticAlgorithm pAlgorithm, int pRepQ, int pExcQ, int pVarQ,  int pMagQ);
 void fitnessFunction(struct Individual pIndiv);
 void determinateScores(struct Individual p[]);
 void createInitialPopulation(struct Individual population[]);
@@ -19,11 +19,40 @@ void combine();
 void deleteUseless();
 
 //----------Body's Functions----------
-void calculate(struct GeneticAlgorithm pAlgorithm){
+void calculate(struct GeneticAlgorithm pAlgorithm, int pRepQ, int pExcQ, int pVarQ,  int pMagQ){
+	pAlgorithm.iterationQuantity = 20;
+
 	//Los padres
-	pAlgorithm.populationQuantity = 28;
+	pAlgorithm.populationQuantity = pRepQ + pExcQ + pVarQ + pMagQ;
 	struct Individual population[pAlgorithm.populationQuantity];
-	createInitialPopulation(population);
+
+	printf("%s", "Cantidad de hijos en total: ");
+	printf("%d\n", pAlgorithm.populationQuantity);
+
+	//Esto no me gusta - debe solucionarse
+	//Crea la población inicial
+	int indexAbsolute = 0;
+	while(pRepQ > 0){
+		population[indexAbsolute] = createIndividual(2);
+		indexAbsolute = indexAbsolute + 1;
+		pRepQ = pRepQ - 1;
+	}
+	while(pExcQ > 0){
+		population[indexAbsolute] = createIndividual(3);
+		indexAbsolute = indexAbsolute + 1;
+		pExcQ = pExcQ - 1;
+	}
+	while(pVarQ > 0){
+		population[indexAbsolute] = createIndividual(1);
+		indexAbsolute = indexAbsolute + 1;
+		pVarQ = pVarQ - 1;
+	}
+	while(pMagQ > 0){
+		population[indexAbsolute] = createIndividual(4);
+		indexAbsolute = indexAbsolute + 1;
+		pMagQ = pMagQ - 1;
+	}
+
 	//Comienza el proceso
 	int indexParents;
 	for (indexParents = 0; indexParents < pAlgorithm.iterationQuantity; ++indexParents){
@@ -33,11 +62,13 @@ void calculate(struct GeneticAlgorithm pAlgorithm){
 };
 
 void fitnessFunction(struct Individual pIndiv){
-	
+	pIndiv.score = 120;
 };
 
 void determinateScores(struct Individual pList[]){
 	int size = arraySize(pList);
+	printf("%s", "Tamano de la poblacion:");
+	printf("%d", size);
 	int indexPopulation;
 	for(indexPopulation = 0; indexPopulation < size; ++indexPopulation){
 		fitnessFunction(pList[indexPopulation]);
@@ -45,7 +76,10 @@ void determinateScores(struct Individual pList[]){
 };
 
 void createInitialPopulation(struct Individual population[]){
+	int indexPopulation;
+	for(indexPopulation = 0; indexPopulation < arraySize(population); ++indexPopulation){
 
+	}
 };
 
 void organize(){
